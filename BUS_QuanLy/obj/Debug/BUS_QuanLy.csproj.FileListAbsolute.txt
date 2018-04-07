@@ -1,0 +1,9 @@
+D:\C#\QuanLyBanHang\QuanLyBanHang\BUS_QuanLy\bin\Debug\BUS_QuanLy.dll
+D:\C#\QuanLyBanHang\QuanLyBanHang\BUS_QuanLy\bin\Debug\BUS_QuanLy.pdb
+D:\C#\QuanLyBanHang\QuanLyBanHang\BUS_QuanLy\bin\Debug\DAL_QuanLy.dll
+D:\C#\QuanLyBanHang\QuanLyBanHang\BUS_QuanLy\bin\Debug\DTO_QuanLy.dll
+D:\C#\QuanLyBanHang\QuanLyBanHang\BUS_QuanLy\bin\Debug\DAL_QuanLy.pdb
+D:\C#\QuanLyBanHang\QuanLyBanHang\BUS_QuanLy\bin\Debug\DTO_QuanLy.pdb
+D:\C#\QuanLyBanHang\QuanLyBanHang\BUS_QuanLy\obj\Debug\BUS_QuanLy.csprojResolveAssemblyReference.cache
+D:\C#\QuanLyBanHang\QuanLyBanHang\BUS_QuanLy\obj\Debug\BUS_QuanLy.dll
+D:\C#\QuanLyBanHang\QuanLyBanHang\BUS_QuanLy\obj\Debug\BUS_QuanLy.pdb
