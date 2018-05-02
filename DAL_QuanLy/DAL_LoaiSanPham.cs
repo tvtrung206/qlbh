@@ -9,18 +9,18 @@ using DTO_QuanLy;
 
 namespace DAL_QuanLy
 {
-public   class DAL_KhachHang : DBConnect
+public   class DAL_LoaiSanPham : DBConnect
     {
         /// <summary>
         /// Hàm trả về danh sách khách hàng
         /// </summary>
         /// <returns>dt</returns>
-        public DataTable getKhachHang()
+        public DataTable getLoaiSanPham()
         {
             DataTable dataTable = new DataTable();
             try
             {
-                string SQL = string.Format("SELECT * FROM KHACHHANG");
+                string SQL = string.Format("SELECT * FROM LOAISANPHAM");
                 SqlDataAdapter dt = new SqlDataAdapter(SQL, openConnect());
                 dt.Fill(dataTable);
             }
@@ -32,18 +32,18 @@ public   class DAL_KhachHang : DBConnect
             return dataTable;
         }
         /// <summary>
-        /// Thêm khách hàng
+        /// Thêm Loại sản phẩm
         /// </summary>
-        /// <param name="kh"></param>
+        /// <param name="lsp"></param>
         /// <returns>true</returns>
-        public bool themKhachHang(DTO_KhachHang kh)
+        public bool themLoaiSanPham(DTO_LoaiSanPham lsp)
         {
             try
             {
                 // Mo KetNoi
                 openConnect();
                 //query
-                string SQL = string.Format("INSERT INTO KHACHHANG(KH_NAME,KH_ADDRESS,KH_PHONE) VALUES(N'{0}',N'{1}',N'{2}')", kh.KH_NAME, kh.KH_ADDRESS, kh.KH_PHONE);
+                string SQL = string.Format("INSERT INTO LOAISANPHAM(LSP_NAME,LSP_DVT) VALUES(N'{0}',N'{1}')", lsp.LSP_NAME, lsp.LSP_DVT);
                 // Mac dinh SqlCommand  para la chuoi
                 SqlCommand cmd = new SqlCommand(SQL, openConnect());
                 if (cmd.ExecuteNonQuery() > 0)
@@ -61,15 +61,15 @@ public   class DAL_KhachHang : DBConnect
             return false;
         }
 
-        public bool suaKhachHang(DTO_KhachHang kh)
+        public bool suaLoaiSanPham(DTO_LoaiSanPham lsp)
         {
             try
             {
                 //Mở kết nối
                 //_conn.Open();
-
+                
                 //Query
-                string SQL = string.Format("UPDATE KHACHHANG SET KH_NAME=N'{0}', KH_ADDRESS=N'{1}', KH_PHONE=N'{2}' WHERE KH_ID={3}", kh.KH_NAME, kh.KH_ADDRESS, kh.KH_PHONE, kh.KH_ID);
+                string SQL = string.Format("UPDATE LOAISANPHAM SET LSP_NAME=N'{0}', LSP_DVT=N'{1}'  WHERE LSP_ID={2}", lsp.LSP_NAME, lsp.LSP_DVT,lsp.LSP_ID);
 
                 //SqlCommand
                 SqlCommand cmd = new SqlCommand(SQL, openConnect());
@@ -88,7 +88,7 @@ public   class DAL_KhachHang : DBConnect
             }
             return false;
         }
-        public bool xoaKhachHang(int KH_ID)
+        public bool xoaLoaiSanPham(int LSP_ID)
         {
             try
             {
@@ -96,7 +96,7 @@ public   class DAL_KhachHang : DBConnect
                 //_conn.Open();
 
                 //Query
-                string SQL = string.Format("DELETE KHACHHANG WHERE KH_ID={0}", KH_ID);
+                string SQL = string.Format("DELETE LOAISANPHAM WHERE LSP_ID={0}", LSP_ID);
                 SqlCommand cmd = new SqlCommand(SQL, openConnect());
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
@@ -115,13 +115,13 @@ public   class DAL_KhachHang : DBConnect
             return false;
         }
 
-        public DataTable getKhachHangByName(string name)
+        public DataTable getLoaiSanPhamByName(string name)
         {
             DataTable dt = new DataTable();
             try
             {
                 
-                string SQL = string.Format("SELECT * FROM KHACHHANG WHERE KH_NAME LIKE '%{0}%'", name);
+                string SQL = string.Format("SELECT * FROM LOAISANPHAM WHERE LSP_NAME LIKE '%{0}%'", name);
                 SqlDataAdapter dtA = new SqlDataAdapter(SQL, openConnect());
                 dtA.Fill(dt);
             }

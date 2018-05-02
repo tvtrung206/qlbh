@@ -31,6 +31,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_QuanLy));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.tab_Main = new DevExpress.XtraBars.TabFormControl();
             this.tabFormDefaultManager1 = new DevExpress.XtraBars.TabFormDefaultManager();
@@ -105,7 +106,9 @@
             this.txtPhone_PKhachHang = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.txtidKhachHang = new DevExpress.XtraEditors.TextEdit();
             this.txtName_PKhachHang = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
             this.btnCance_PKhachHang = new DevExpress.XtraEditors.SimpleButton();
@@ -113,11 +116,28 @@
             this.btnCreate_PKhachHang = new DevExpress.XtraEditors.SimpleButton();
             this.tabPageLoaiDVT = new DevExpress.XtraBars.TabFormPage();
             this.tabFormContentContainer3 = new DevExpress.XtraBars.TabFormContentContainer();
+            this.groupControl12 = new DevExpress.XtraEditors.GroupControl();
+            this.txtDVTLSP = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.txtIDLSP = new DevExpress.XtraEditors.TextEdit();
+            this.txtNAMELSP = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl11 = new DevExpress.XtraEditors.GroupControl();
+            this.gridControlLSP = new DevExpress.XtraGrid.GridControl();
+            this.gridViewLSP = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnDeleteLSP = new DevExpress.XtraEditors.SimpleButton();
+            this.btnF5LSP = new DevExpress.XtraEditors.SimpleButton();
+            this.searchControl3 = new DevExpress.XtraEditors.SearchControl();
+            this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
+            this.btnCanceLSP = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSaveLSP = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCreateLSP = new DevExpress.XtraEditors.SimpleButton();
             this.tabFormPage1 = new DevExpress.XtraBars.TabFormPage();
             this.tabFormContentContainer4 = new DevExpress.XtraBars.TabFormContentContainer();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.txtidKhachHang = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tab_Main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager1)).BeginInit();
             this.xtraScrollableControl1.SuspendLayout();
@@ -162,10 +182,23 @@
             this.groupControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress_PKhachHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhone_PKhachHang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtidKhachHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName_PKhachHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
             this.groupControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtidKhachHang.Properties)).BeginInit();
+            this.tabFormContentContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl12)).BeginInit();
+            this.groupControl12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDVTLSP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDLSP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNAMELSP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).BeginInit();
+            this.groupControl11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlLSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewLSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControl3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
+            this.groupControl10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_Main
@@ -185,7 +218,7 @@
             this.tab_Main.Pages.Add(this.tabPageKhachhang);
             this.tab_Main.Pages.Add(this.tabPageLoaiDVT);
             this.tab_Main.Pages.Add(this.tabFormPage1);
-            this.tab_Main.SelectedPage = this.tabPageKhachhang;
+            this.tab_Main.SelectedPage = this.tabPageLoaiDVT;
             this.tab_Main.ShowAddPageButton = false;
             this.tab_Main.ShowTabCloseButtons = false;
             this.tab_Main.ShowTabsInTitleBar = DevExpress.XtraBars.ShowTabsInTitleBar.True;
@@ -735,9 +768,9 @@
             // 
             // grdKhachhang_PKhachHang
             // 
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.grdKhachhang_PKhachHang.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.grdKhachhang_PKhachHang.Location = new System.Drawing.Point(9, 51);
             this.grdKhachhang_PKhachHang.MainView = this.grdKhachhang;
             this.grdKhachhang_PKhachHang.MenuManager = this.tabFormDefaultManager1;
@@ -869,6 +902,14 @@
             this.labelControl11.TabIndex = 0;
             this.labelControl11.Text = "Điện Thoại";
             // 
+            // txtidKhachHang
+            // 
+            this.txtidKhachHang.Enabled = false;
+            this.txtidKhachHang.Location = new System.Drawing.Point(37, 36);
+            this.txtidKhachHang.Name = "txtidKhachHang";
+            this.txtidKhachHang.Size = new System.Drawing.Size(69, 20);
+            this.txtidKhachHang.TabIndex = 1;
+            // 
             // txtName_PKhachHang
             // 
             this.txtName_PKhachHang.Location = new System.Drawing.Point(13, 85);
@@ -876,6 +917,14 @@
             this.txtName_PKhachHang.Name = "txtName_PKhachHang";
             this.txtName_PKhachHang.Size = new System.Drawing.Size(192, 20);
             this.txtName_PKhachHang.TabIndex = 1;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(13, 39);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(18, 13);
+            this.labelControl13.TabIndex = 0;
+            this.labelControl13.Text = "Mã:";
             // 
             // labelControl10
             // 
@@ -937,11 +986,209 @@
             // 
             // tabFormContentContainer3
             // 
+            this.tabFormContentContainer3.Controls.Add(this.groupControl12);
+            this.tabFormContentContainer3.Controls.Add(this.groupControl11);
+            this.tabFormContentContainer3.Controls.Add(this.groupControl10);
             this.tabFormContentContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabFormContentContainer3.Location = new System.Drawing.Point(0, 40);
             this.tabFormContentContainer3.Name = "tabFormContentContainer3";
             this.tabFormContentContainer3.Size = new System.Drawing.Size(949, 524);
             this.tabFormContentContainer3.TabIndex = 8;
+            // 
+            // groupControl12
+            // 
+            this.groupControl12.Controls.Add(this.txtDVTLSP);
+            this.groupControl12.Controls.Add(this.labelControl15);
+            this.groupControl12.Controls.Add(this.txtIDLSP);
+            this.groupControl12.Controls.Add(this.txtNAMELSP);
+            this.groupControl12.Controls.Add(this.labelControl16);
+            this.groupControl12.Controls.Add(this.labelControl17);
+            this.groupControl12.Location = new System.Drawing.Point(13, 120);
+            this.groupControl12.Name = "groupControl12";
+            this.groupControl12.Size = new System.Drawing.Size(217, 393);
+            this.groupControl12.TabIndex = 12;
+            this.groupControl12.Text = "Chi tiết";
+            // 
+            // txtDVTLSP
+            // 
+            this.txtDVTLSP.Location = new System.Drawing.Point(13, 137);
+            this.txtDVTLSP.Name = "txtDVTLSP";
+            this.txtDVTLSP.Properties.Mask.BeepOnError = true;
+            this.txtDVTLSP.Properties.Mask.EditMask = "99999999999";
+            this.txtDVTLSP.Size = new System.Drawing.Size(192, 20);
+            this.txtDVTLSP.TabIndex = 2;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(13, 118);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(52, 13);
+            this.labelControl15.TabIndex = 0;
+            this.labelControl15.Text = "Đơn vị tính";
+            // 
+            // txtIDLSP
+            // 
+            this.txtIDLSP.Enabled = false;
+            this.txtIDLSP.Location = new System.Drawing.Point(37, 36);
+            this.txtIDLSP.Name = "txtIDLSP";
+            this.txtIDLSP.Size = new System.Drawing.Size(69, 20);
+            this.txtIDLSP.TabIndex = 1;
+            // 
+            // txtNAMELSP
+            // 
+            this.txtNAMELSP.Location = new System.Drawing.Point(13, 85);
+            this.txtNAMELSP.MenuManager = this.tabFormDefaultManager1;
+            this.txtNAMELSP.Name = "txtNAMELSP";
+            this.txtNAMELSP.Size = new System.Drawing.Size(192, 20);
+            this.txtNAMELSP.TabIndex = 1;
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Location = new System.Drawing.Point(13, 39);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(18, 13);
+            this.labelControl16.TabIndex = 0;
+            this.labelControl16.Text = "Mã:";
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Location = new System.Drawing.Point(13, 66);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(68, 13);
+            this.labelControl17.TabIndex = 0;
+            this.labelControl17.Text = "Loại sản phẩm";
+            // 
+            // groupControl11
+            // 
+            this.groupControl11.Controls.Add(this.gridControlLSP);
+            this.groupControl11.Controls.Add(this.btnDeleteLSP);
+            this.groupControl11.Controls.Add(this.btnF5LSP);
+            this.groupControl11.Controls.Add(this.searchControl3);
+            this.groupControl11.Location = new System.Drawing.Point(248, 9);
+            this.groupControl11.Name = "groupControl11";
+            this.groupControl11.Size = new System.Drawing.Size(689, 497);
+            this.groupControl11.TabIndex = 11;
+            this.groupControl11.Text = "Danh Sách";
+            // 
+            // gridControlLSP
+            // 
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControlLSP.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gridControlLSP.Location = new System.Drawing.Point(9, 51);
+            this.gridControlLSP.MainView = this.gridViewLSP;
+            this.gridControlLSP.MenuManager = this.tabFormDefaultManager1;
+            this.gridControlLSP.Name = "gridControlLSP";
+            this.gridControlLSP.Size = new System.Drawing.Size(675, 437);
+            this.gridControlLSP.TabIndex = 2;
+            this.gridControlLSP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewLSP});
+            this.gridControlLSP.Click += new System.EventHandler(this.gridControlLSP_Click);
+            // 
+            // gridViewLSP
+            // 
+            this.gridViewLSP.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn11,
+            this.gridColumn12});
+            this.gridViewLSP.GridControl = this.gridControlLSP;
+            this.gridViewLSP.Name = "gridViewLSP";
+            this.gridViewLSP.OptionsBehavior.Editable = false;
+            this.gridViewLSP.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Loại sản phẩm";
+            this.gridColumn11.FieldName = "LSP_NAME";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 0;
+            this.gridColumn11.Width = 176;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Đơn vị tính";
+            this.gridColumn12.FieldName = "LSP_DVT";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 1;
+            this.gridColumn12.Width = 185;
+            // 
+            // btnDeleteLSP
+            // 
+            this.btnDeleteLSP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteLSP.ImageOptions.Image")));
+            this.btnDeleteLSP.Location = new System.Drawing.Point(388, 21);
+            this.btnDeleteLSP.Name = "btnDeleteLSP";
+            this.btnDeleteLSP.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteLSP.TabIndex = 1;
+            this.btnDeleteLSP.Text = "Xóa";
+            this.btnDeleteLSP.Click += new System.EventHandler(this.btnDeleteLSP_Click);
+            // 
+            // btnF5LSP
+            // 
+            this.btnF5LSP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnF5LSP.ImageOptions.Image")));
+            this.btnF5LSP.Location = new System.Drawing.Point(307, 21);
+            this.btnF5LSP.Name = "btnF5LSP";
+            this.btnF5LSP.Size = new System.Drawing.Size(75, 23);
+            this.btnF5LSP.TabIndex = 1;
+            this.btnF5LSP.Text = "Làm mới";
+            this.btnF5LSP.Click += new System.EventHandler(this.btnF5LSP_Click);
+            // 
+            // searchControl3
+            // 
+            this.searchControl3.Client = this.gridControlLSP;
+            this.searchControl3.Location = new System.Drawing.Point(9, 24);
+            this.searchControl3.MenuManager = this.tabFormDefaultManager1;
+            this.searchControl3.Name = "searchControl3";
+            this.searchControl3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Repository.ClearButton(),
+            new DevExpress.XtraEditors.Repository.SearchButton()});
+            this.searchControl3.Properties.Client = this.gridControlLSP;
+            this.searchControl3.Size = new System.Drawing.Size(292, 20);
+            this.searchControl3.TabIndex = 0;
+            // 
+            // groupControl10
+            // 
+            this.groupControl10.Controls.Add(this.btnCanceLSP);
+            this.groupControl10.Controls.Add(this.btnSaveLSP);
+            this.groupControl10.Controls.Add(this.btnCreateLSP);
+            this.groupControl10.Location = new System.Drawing.Point(12, 9);
+            this.groupControl10.Name = "groupControl10";
+            this.groupControl10.Size = new System.Drawing.Size(218, 105);
+            this.groupControl10.TabIndex = 9;
+            this.groupControl10.Text = "Tác vụ";
+            // 
+            // btnCanceLSP
+            // 
+            this.btnCanceLSP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCanceLSP.ImageOptions.Image")));
+            this.btnCanceLSP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnCanceLSP.Location = new System.Drawing.Point(146, 24);
+            this.btnCanceLSP.Name = "btnCanceLSP";
+            this.btnCanceLSP.Size = new System.Drawing.Size(60, 63);
+            this.btnCanceLSP.TabIndex = 0;
+            this.btnCanceLSP.Text = "Hủy";
+            this.btnCanceLSP.Click += new System.EventHandler(this.btnCanceLSP_Click);
+            // 
+            // btnSaveLSP
+            // 
+            this.btnSaveLSP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveLSP.ImageOptions.Image")));
+            this.btnSaveLSP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnSaveLSP.Location = new System.Drawing.Point(80, 24);
+            this.btnSaveLSP.Name = "btnSaveLSP";
+            this.btnSaveLSP.Size = new System.Drawing.Size(60, 63);
+            this.btnSaveLSP.TabIndex = 0;
+            this.btnSaveLSP.Text = "Lưu";
+            this.btnSaveLSP.Click += new System.EventHandler(this.btnSaveLSP_Click);
+            // 
+            // btnCreateLSP
+            // 
+            this.btnCreateLSP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateLSP.ImageOptions.Image")));
+            this.btnCreateLSP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnCreateLSP.Location = new System.Drawing.Point(14, 24);
+            this.btnCreateLSP.Name = "btnCreateLSP";
+            this.btnCreateLSP.Size = new System.Drawing.Size(60, 63);
+            this.btnCreateLSP.TabIndex = 0;
+            this.btnCreateLSP.Text = "Tạo mới";
+            this.btnCreateLSP.Click += new System.EventHandler(this.btnCreateLSP_Click);
             // 
             // tabFormPage1
             // 
@@ -953,30 +1200,14 @@
             // tabFormContentContainer4
             // 
             this.tabFormContentContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabFormContentContainer4.Location = new System.Drawing.Point(0, 27);
+            this.tabFormContentContainer4.Location = new System.Drawing.Point(0, 40);
             this.tabFormContentContainer4.Name = "tabFormContentContainer4";
-            this.tabFormContentContainer4.Size = new System.Drawing.Size(876, 431);
+            this.tabFormContentContainer4.Size = new System.Drawing.Size(949, 524);
             this.tabFormContentContainer4.TabIndex = 9;
             // 
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Visual Studio 2013 Blue";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Location = new System.Drawing.Point(13, 39);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(18, 13);
-            this.labelControl13.TabIndex = 0;
-            this.labelControl13.Text = "Mã:";
-            // 
-            // txtidKhachHang
-            // 
-            this.txtidKhachHang.Enabled = false;
-            this.txtidKhachHang.Location = new System.Drawing.Point(37, 36);
-            this.txtidKhachHang.Name = "txtidKhachHang";
-            this.txtidKhachHang.Size = new System.Drawing.Size(69, 20);
-            this.txtidKhachHang.TabIndex = 1;
             // 
             // GUI_QuanLy
             // 
@@ -988,7 +1219,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Controls.Add(this.tabFormContentContainer2);
+            this.Controls.Add(this.tabFormContentContainer3);
             this.Controls.Add(this.tab_Main);
             this.Font = new System.Drawing.Font("Tahoma", 10F);
             this.Name = "GUI_QuanLy";
@@ -1042,10 +1273,24 @@
             this.groupControl8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress_PKhachHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhone_PKhachHang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtidKhachHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName_PKhachHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
             this.groupControl7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtidKhachHang.Properties)).EndInit();
+            this.tabFormContentContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl12)).EndInit();
+            this.groupControl12.ResumeLayout(false);
+            this.groupControl12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDVTLSP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDLSP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNAMELSP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).EndInit();
+            this.groupControl11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlLSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewLSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControl3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).EndInit();
+            this.groupControl10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1139,6 +1384,25 @@
         private DevExpress.XtraEditors.SimpleButton btnDelete_PKhachhang;
         private DevExpress.XtraEditors.TextEdit txtidKhachHang;
         private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.GroupControl groupControl12;
+        private DevExpress.XtraEditors.TextEdit txtDVTLSP;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.TextEdit txtIDLSP;
+        private DevExpress.XtraEditors.TextEdit txtNAMELSP;
+        private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraEditors.LabelControl labelControl17;
+        private DevExpress.XtraEditors.GroupControl groupControl11;
+        private DevExpress.XtraGrid.GridControl gridControlLSP;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewLSP;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraEditors.SimpleButton btnDeleteLSP;
+        private DevExpress.XtraEditors.SimpleButton btnF5LSP;
+        private DevExpress.XtraEditors.SearchControl searchControl3;
+        private DevExpress.XtraEditors.GroupControl groupControl10;
+        private DevExpress.XtraEditors.SimpleButton btnCanceLSP;
+        private DevExpress.XtraEditors.SimpleButton btnSaveLSP;
+        private DevExpress.XtraEditors.SimpleButton btnCreateLSP;
     }
 }
 

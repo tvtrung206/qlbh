@@ -15,6 +15,7 @@ namespace GUI_QuanLy
     public partial class GUI_QuanLy : DevExpress.XtraBars.TabForm
     {
         BUS_KhachHang buskh = new BUS_KhachHang();
+        BUS_LoaiSanPham busloaisanpham = new BUS_LoaiSanPham();
         public GUI_QuanLy()
         {
             InitializeComponent();
@@ -28,17 +29,19 @@ namespace GUI_QuanLy
         }
         static int OpenFormCount = 1;
 
+        // Khach hang  // 
+        
         private void GUI_QuanLy_Load(object sender, EventArgs e)
         {
             
             grdKhachhang_PKhachHang.DataSource = buskh.getKhachHang();
+            gridControlLSP.DataSource = busloaisanpham.getLoaiSanPham();
            
         }
 
-
         private void btnCreate_PKhachHang_Click(object sender, EventArgs e)
         {
-            clearAll();
+            clearKhachHang();
             grdKhachhang_PKhachHang.DataSource = buskh.getKhachHang();
         }
 
@@ -67,11 +70,10 @@ namespace GUI_QuanLy
             {
                 buskh.xoaKhachHang(idkh);
                 MessageBox.Show("Xóa thành công");
-                clearAll();                
+                clearKhachHang();                
             }
            
         }
-
 
         private void btnSave_PKhachHang_Click(object sender, EventArgs e)
         {
@@ -107,14 +109,14 @@ namespace GUI_QuanLy
                     }
                 }
 
-                clearAll();
+                clearKhachHang();
             }
             else
             {
                 MessageBox.Show("Nhập thông tin đầy đủ ở  các ô có `*`;");
             }
         }
-        private void clearAll()
+        private void clearKhachHang()
         {
             txtAddress_PKhachHang.Text = "";
             txtName_PKhachHang.Text = "";
@@ -123,5 +125,97 @@ namespace GUI_QuanLy
             grdKhachhang_PKhachHang.DataSource = buskh.getKhachHang();
         }
 
+     
+
+
+        // Loai San Pham  // 
+        // ******************************************** //
+        private void clearLoaiSanPham()
+        {
+            txtNAMELSP.Text = "";
+            txtIDLSP.Text = "";
+            txtDVTLSP.Text = "";
+            gridControlLSP.DataSource = busloaisanpham.getLoaiSanPham();
+            
+        }
+
+        private void btnCreateLSP_Click(object sender, EventArgs e)
+        {
+            clearLoaiSanPham();
+            gridControlLSP.DataSource = busloaisanpham.getLoaiSanPham();
+        }
+
+        private void btnSaveLSP_Click(object sender, EventArgs e)
+        {
+            if (txtNAMELSP.Text != "" && txtDVTLSP.Text != "")
+            {
+                if (txtIDLSP.Text != "")
+                {
+                    int id = Convert.ToInt16(txtIDLSP.Text);
+                    DTO_LoaiSanPham dtolsp = new DTO_LoaiSanPham(id,txtNAMELSP.Text, txtDVTLSP.Text);
+                    if (busloaisanpham.suaLoaiSanPham(dtolsp))
+                    {
+                        MessageBox.Show("Cập nhật hoàn tất");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thất bại");
+                    }
+                }
+                else
+                {
+                    // toi tao doi tuong
+                    DTO_LoaiSanPham dtolsp = new DTO_LoaiSanPham(0, txtNAMELSP.Text, txtDVTLSP.Text);
+                    // dùng buss thêm đối tượng
+                    if (busloaisanpham.themLoaiSanPham(dtolsp))
+                    {
+                        MessageBox.Show("Thêm thành công");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thêm được");
+                    }
+                }
+
+                clearLoaiSanPham();
+            }
+            else
+            {
+                MessageBox.Show("Nhập thông tin đầy đủ ở  các ô có `*`;");
+            }
+        }
+
+        private void gridControlLSP_Click(object sender, EventArgs e)
+        {
+            //GetFocusedRowCellValue  là giấy giá trị từ cell theo tên trường trong csdl. devexpress
+            // Console.Write(grdKhachhang.GetFocusedRowCellValue("KH_ID").ToString());
+            txtNAMELSP.Text = gridViewLSP.GetFocusedRowCellValue("LSP_NAME").ToString().Trim();
+            txtDVTLSP.Text = gridViewLSP.GetFocusedRowCellValue("LSP_DVT").ToString().Trim();
+            txtIDLSP.Text = gridViewLSP.GetFocusedRowCellValue("LSP_ID").ToString().Trim();
+        }
+
+        private void btnCanceLSP_Click(object sender, EventArgs e)
+        {
+            clearLoaiSanPham();
+        }
+
+        private void btnF5LSP_Click(object sender, EventArgs e)
+        {
+            gridControlLSP.DataSource = busloaisanpham.getLoaiSanPham();
+        }
+
+        private void btnDeleteLSP_Click(object sender, EventArgs e)
+        {
+            //Lấy id 
+            int id = Convert.ToInt16(gridViewLSP.GetFocusedRowCellValue("LSP_ID").ToString());
+            DialogResult dialogResult = MessageBox.Show("Chọn `Yes` nếu đồng ý xóa", "Thông báo!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                busloaisanpham.xoaLoaiSanPham(id);
+                MessageBox.Show("Xóa thành công");
+                clearLoaiSanPham();
+            }
+        }
     }
 }
